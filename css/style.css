@@ -402,7 +402,6 @@ button {
   height: 100%;
   object-fit: contain;
   vertical-align: bottom; /* Prevents tiny gaps below images */
-  mix-blend-mode: multiply; /* Removes solid white background */
 }
 
 /* Balanced Center (Flush with bottom) */
