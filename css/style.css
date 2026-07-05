@@ -548,9 +548,9 @@ a {
 /* Label (small uppercase) */
 .label {
     font-family: var(--font-sans);
-    font-size: clamp(0.75rem, 2vw, 0.9rem);
-    font-weight: 300;
-    letter-spacing: 0.3em;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    font-weight: 400;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--dusty-pink);
     margin-bottom: 0.5rem;
@@ -559,7 +559,7 @@ a {
 /* Section title (serif) */
 .section-title {
     font-family: var(--font-serif);
-    font-size: clamp(1.7rem, 5.5vw, 2.5rem);
+    font-size: clamp(2rem, 6.5vw, 3rem);
     font-weight: 500;
     color: var(--text-dark);
     margin-bottom: 1.5rem;
@@ -652,7 +652,7 @@ a {
 /* Couple names */
 .couple-names {
     font-family: var(--font-script);
-    font-size: clamp(3rem, 10vw, 4.5rem);
+    font-size: clamp(3.5rem, 12vw, 5.5rem);
     color: var(--text-dark);
     line-height: 1.2;
     margin-bottom: 0.4rem;
@@ -700,7 +700,7 @@ a {
 
 .countdown-number {
     font-family: var(--font-serif);
-    font-size: clamp(1.8rem, 6vw, 2.8rem);
+    font-size: clamp(2.2rem, 7vw, 3.2rem);
     font-weight: 500;
     color: var(--text-dark);
     line-height: 1;
@@ -714,8 +714,8 @@ a {
 
 .countdown-label {
     font-family: var(--font-sans);
-    font-size: clamp(0.55rem, 1.4vw, 0.7rem);
-    font-weight: 300;
+    font-size: clamp(0.7rem, 2vw, 0.9rem);
+    font-weight: 400;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--dusty-pink);
@@ -1398,7 +1398,7 @@ a {
 
 .thanks-title {
     font-family: var(--font-script);
-    font-size: clamp(2.4rem, 9vw, 3.8rem);
+    font-size: clamp(3rem, 10vw, 4.5rem);
     color: var(--text-dark);
     margin-bottom: 1.2rem;
 }
@@ -1413,7 +1413,7 @@ a {
 
 .thanks-names {
     font-family: var(--font-script);
-    font-size: clamp(1.8rem, 6vw, 2.8rem);
+    font-size: clamp(2.4rem, 8vw, 3.5rem);
     color: var(--dusty-pink);
     margin-bottom: 0.8rem;
 }
