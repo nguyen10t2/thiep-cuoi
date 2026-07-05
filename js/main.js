@@ -30,6 +30,29 @@
     }, 2500);
   });
 
+  // ── Music Player ──
+  function initMusic() {
+    var musicPlayer = document.getElementById('music-player');
+    var bgMusic = document.getElementById('bg-music');
+    if (musicPlayer && bgMusic) {
+      musicPlayer.classList.add('visible');
+      bgMusic.play().catch(function(e) {
+        console.log("Auto-play prevented:", e);
+        musicPlayer.classList.add('paused');
+      });
+
+      musicPlayer.addEventListener('click', function () {
+        if (bgMusic.paused) {
+          bgMusic.play();
+          musicPlayer.classList.remove('paused');
+        } else {
+          bgMusic.pause();
+          musicPlayer.classList.add('paused');
+        }
+      });
+    }
+  }
+
   // ── Countdown Timer ──────────────────────────────
   var WEDDING_DATE = new Date('2026-07-19T07:00:00Z');
   var countDays, countHours, countMinutes, countSeconds;
