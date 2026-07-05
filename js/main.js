@@ -26,6 +26,7 @@
       initNavDots();
       initGallery();
       initWishes();
+      initMusic();
     }, 2500);
   });
 

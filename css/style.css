@@ -1742,3 +1742,46 @@ a {
         scroll-snap-type: none;
     }
 }
+
+
+/* ─────────────────────────────────────────────────
+   14. MUSIC PLAYER
+   ───────────────────────────────────────────────── */
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background: var(--white);
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    cursor: pointer;
+    animation: spin 4s linear infinite;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.music-player.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.music-player.paused {
+    animation-play-state: paused;
+}
+
+.music-player svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--text-dark);
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
