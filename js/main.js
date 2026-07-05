@@ -26,7 +26,7 @@
       initNavDots();
       initGallery();
       initWishes();
-    }, 900);
+    }, 2500);
   });
 
   // ── Countdown Timer ──────────────────────────────
