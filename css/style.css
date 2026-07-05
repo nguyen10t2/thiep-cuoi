@@ -10,9 +10,9 @@
    ───────────────────────────────────────────────── */
 :root {
     /* Palette */
-    --dusty-pink:  #d4899a;
-    --soft-pink:   #f8e8ec;
-    --blush:       #fdf2f4;
+    --dusty-pink:  #222222;
+    --soft-pink:   #f5f5f5;
+    --blush:       #fafafa;
     --ivory:       #faf8f5;
     --cream:       #f5efe7;
     --sage:        #8fae88;
@@ -20,13 +20,13 @@
     --white:       #ffffff;
 
     /* Text */
-    --text-dark:   #3b2f2f;
-    --text-medium: #5a4a4a;
-    --text-light:  #8a7a7a;
+    --text-dark:   #1a1a1a;
+    --text-medium: #4a4a4a;
+    --text-light:  #888888;
 
     /* Derived */
-    --light-pink:  #f5dde1;
-    --shadow:      rgba(212, 137, 154, 0.15);
+    --light-pink:  #e0e0e0;
+    --shadow:      rgba(0, 0, 0, 0.15);
 
     /* Typography */
     --font-script: "Great Vibes", cursive;
@@ -200,9 +200,9 @@ a {
 .envelope {
     position: absolute;
     inset: 0;
-    background: #dfbdc2;
+    background: #dcdcdc;
     border-radius: 4px;
-    box-shadow: 0 15px 40px rgba(212, 137, 154, 0.25);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -216,7 +216,7 @@ a {
     left: 0;
     width: 100%;
     height: 65%;
-    background: #dfbdc2;
+    background: #dcdcdc;
     clip-path: polygon(0 0, 100% 0, 50% 100%);
     z-index: 4;
     transform-origin: top;
@@ -231,7 +231,7 @@ a {
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(to right, transparent, rgba(212, 137, 154, 0.3), transparent);
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.3), transparent);
 }
 
 #cover.zoom-out .envelope-flap {
@@ -246,7 +246,7 @@ a {
     left: 0;
     width: 50.5%;
     height: 100%;
-    background: #ebcdd1;
+    background: #e5e5e5;
     clip-path: polygon(0 0, 100% 50%, 0 100%);
     z-index: 3;
     border-radius: 4px 0 0 4px;
@@ -258,7 +258,7 @@ a {
     right: 0;
     width: 50.5%;
     height: 100%;
-    background: #ebcdd1;
+    background: #e5e5e5;
     clip-path: polygon(100% 0, 0 50%, 100% 100%);
     z-index: 3;
     border-radius: 0 4px 4px 0;
@@ -270,7 +270,7 @@ a {
     left: 0;
     width: 100%;
     height: 55%;
-    background: #e4c1c5;
+    background: #e0e0e0;
     clip-path: polygon(0 100%, 50% 0, 100% 100%);
     z-index: 3;
     border-radius: 0 0 4px 4px;
@@ -291,7 +291,7 @@ a {
     align-items: center;
     padding: 1rem;
     transition: transform 1.2s 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(212, 137, 154, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 #cover.zoom-out .envelope-body {
@@ -321,7 +321,7 @@ a {
     z-index: 5;
     width: clamp(56px, 14vw, 76px);
     height: clamp(56px, 14vw, 76px);
-    background: linear-gradient(135deg, #dfbdc2, #c6949b);
+    background: linear-gradient(135deg, #dcdcdc, #b3b3b3);
     border-radius: 50%;
     border: 2px solid rgba(255, 255, 255, 0.3);
     box-shadow:
@@ -343,8 +343,8 @@ a {
 
 .seal-btn:hover {
     transform: translate(-50%, -50%) scale(1.08);
-    background: #c47a8c;
-    box-shadow: 0 8px 20px rgba(212, 137, 154, 0.4);
+    background: #666666;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 #cover.zoom-out .seal-btn {
@@ -623,8 +623,8 @@ a {
     overflow: hidden;
     border: 4px solid var(--white);
     box-shadow:
-        0 8px 30px rgba(212, 137, 154, 0.25),
-        0 0 0 8px rgba(212, 137, 154, 0.08);
+        0 8px 30px rgba(0, 0, 0, 0.25),
+        0 0 0 8px rgba(0, 0, 0, 0.08);
     position: relative;
 }
 
@@ -768,7 +768,7 @@ a {
     border-radius: 16px;
     padding: 1.2rem 1rem;
     box-shadow: 0 8px 30px var(--shadow);
-    border: 1px solid rgba(212, 137, 154, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .calendar-header {
@@ -777,7 +777,7 @@ a {
     align-items: center;
     padding-bottom: 0.8rem;
     margin-bottom: 0.6rem;
-    border-bottom: 1px solid rgba(212, 137, 154, 0.15);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     font-family: var(--font-serif);
     font-size: clamp(1.1rem, 3vw, 1.3rem);
     font-weight: 600;
@@ -826,7 +826,7 @@ a {
     color: var(--white);
     font-weight: 700;
     position: relative;
-    box-shadow: 0 4px 15px rgba(212, 137, 154, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     animation: heartPulse 2s ease-in-out infinite;
 }
 
@@ -861,10 +861,10 @@ a {
     background: var(--white);
     border-radius: 20px;
     padding: 2rem 1.5rem;
-    box-shadow: 0 8px 40px rgba(212, 137, 154, 0.15);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
     position: relative;
     text-align: left;
-    border: 1px solid rgba(212, 137, 154, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
@@ -994,13 +994,13 @@ a {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.03);
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(212, 137, 154, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .event-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 35px rgba(212, 137, 154, 0.15);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
 }
 
 .event-icon {
@@ -1068,8 +1068,8 @@ a {
     background: var(--white);
     border-radius: 20px;
     padding: 1.8rem 1.3rem;
-    box-shadow: 0 6px 25px rgba(212, 137, 154, 0.12);
-    border: 1px solid rgba(212, 137, 154, 0.08);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     position: relative;
     overflow: hidden;
     text-align: center;
@@ -1161,8 +1161,8 @@ a {
     background: var(--white);
     padding: 1.2rem;
     border-radius: 16px;
-    box-shadow: 0 6px 25px rgba(212, 137, 154, 0.12);
-    border: 1px solid rgba(212, 137, 154, 0.08);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 #wishForm input,
@@ -1181,7 +1181,7 @@ a {
 #wishForm input:focus,
 #wishForm textarea:focus {
     border-color: var(--dusty-pink);
-    box-shadow: 0 0 0 3px rgba(212, 137, 154, 0.1);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
 #wishForm input::placeholder,
@@ -1201,7 +1201,7 @@ a {
     justify-content: center;
     gap: 0.5rem;
     padding: 0.75rem 1.8rem;
-    background: linear-gradient(135deg, var(--dusty-pink), #c47a8c);
+    background: linear-gradient(135deg, var(--dusty-pink), #666666);
     color: var(--white);
     border-radius: 50px;
     font-family: var(--font-sans);
@@ -1211,13 +1211,13 @@ a {
     text-transform: uppercase;
     transition: all 0.3s;
     align-self: center;
-    box-shadow: 0 4px 15px rgba(212, 137, 154, 0.25);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 #wishSubmitBtn:hover {
-    background: linear-gradient(135deg, #c47a8c, #b06b7b);
+    background: linear-gradient(135deg, #666666, #4d4d4d);
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(212, 137, 154, 0.35);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
 #wishSubmitBtn:disabled {
@@ -1288,7 +1288,7 @@ a {
     border-radius: 14px;
     padding: 1rem 1.2rem;
     margin-bottom: 0.6rem;
-    box-shadow: 0 3px 12px rgba(212, 137, 154, 0.1);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
     text-align: left;
     border-left: 3px solid var(--dusty-pink);
     animation: wishIn 0.4s ease-out;
@@ -1356,7 +1356,7 @@ a {
 .gallery-swiper {
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 10px 40px rgba(212, 137, 154, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
 .gallery-swiper .swiper-slide img {
