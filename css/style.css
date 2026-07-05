@@ -889,11 +889,13 @@ button {
 
   .events-grid {
     flex-direction: row;
-    gap: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
   .event-card {
-    flex: 1;
+    flex: 1 1 calc(50% - 0.5rem);
+    min-width: 0;
   }
 
   .families-grid {
@@ -913,6 +915,14 @@ button {
 @media (min-width: 1024px) {
   .scroll-section {
     padding: 5rem 2rem;
+  }
+
+  .events-grid {
+    flex-wrap: nowrap;
+  }
+
+  .event-card {
+    flex: 1;
   }
 
   .nav-dots {
