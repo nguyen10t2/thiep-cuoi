@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thiệp Cưới — Nhài & Long</title>
   <meta name="description" content="Trân trọng kính mời Quý vị đến chung vui cùng gia đình trong lễ thành hôn của Đào Thị Nhài & Bùi Văn Long.">
   <meta property="og:title" content="Thiệp Cưới — Nhài & Long">
@@ -10,332 +10,124 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/image/MainImage.jpg">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
-
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="css/style.css?v=2">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      min-height: 100vh;
+      background: linear-gradient(145deg, #fce4ec 0%, #f8e8eb 40%, #f5dde1 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .container {
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+    }
+    .subtitle {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #d4899a;
+      margin-bottom: 1rem;
+    }
+    .names {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(3rem, 12vw, 5rem);
+      color: #3b2f2f;
+      line-height: 1.1;
+      margin-bottom: 0.3rem;
+    }
+    .amp {
+      font-size: 0.5em;
+      color: #c9a96e;
+    }
+    .date {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.5em;
+      color: #5a4a4a;
+      margin-bottom: 2.5rem;
+    }
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #c9a96e, transparent);
+      margin: 0 auto 2rem;
+    }
+    .label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #8a7a7a;
+      margin-bottom: 1.2rem;
+    }
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      border: 2px solid #d4899a;
+    }
+    .btn-bride {
+      background: #d4899a;
+      color: #fff;
+    }
+    .btn-bride:hover {
+      background: #c47a8c;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(212,137,154,0.3);
+    }
+    .btn-groom {
+      background: transparent;
+      color: #d4899a;
+    }
+    .btn-groom:hover {
+      background: #d4899a;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(212,137,154,0.3);
+    }
+    .hint {
+      font-size: 0.75rem;
+      color: #8a7a7a;
+      margin-top: 2rem;
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- ==================== COVER PAGE ==================== -->
-  <section id="cover">
-    <div class="cover-inner">
-      <!-- Floral Corner SVGs -->
-      <svg class="floral-corner top-left" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M190 10C140 10 100 30 70 60C40 90 20 130 10 180" stroke="var(--sage)" stroke-width="1.5" fill="none" opacity="0.6"/>
-        <path d="M170 10C130 20 95 40 70 65C45 90 30 120 20 160" stroke="var(--sage)" stroke-width="1" fill="none" opacity="0.4"/>
-        <ellipse cx="50" cy="50" rx="20" ry="10" transform="rotate(-35 50 50)" fill="var(--sage)" opacity="0.15"/>
-        <ellipse cx="35" cy="70" rx="16" ry="8" transform="rotate(-25 35 70)" fill="var(--sage)" opacity="0.12"/>
-        <ellipse cx="80" cy="35" rx="14" ry="7" transform="rotate(-50 80 35)" fill="var(--sage)" opacity="0.1"/>
-        <ellipse cx="65" cy="55" rx="12" ry="6" transform="rotate(-40 65 55)" fill="var(--sage)" opacity="0.1"/>
-        <circle cx="10" cy="180" r="5" fill="var(--dusty-pink)" opacity="0.5"/>
-        <circle cx="20" cy="160" r="4" fill="var(--dusty-pink)" opacity="0.4"/>
-        <circle cx="30" cy="140" r="3.5" fill="var(--dusty-pink)" opacity="0.35"/>
-        <circle cx="70" cy="60" r="3" fill="var(--gold)" opacity="0.4"/>
-        <circle cx="90" cy="30" r="2.5" fill="var(--gold)" opacity="0.3"/>
-        <ellipse cx="120" cy="20" rx="10" ry="5" transform="rotate(-60 120 20)" fill="var(--sage)" opacity="0.08"/>
-      </svg>
-
-      <svg class="floral-corner top-right" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 10C60 10 100 30 130 60C160 90 180 130 190 180" stroke="var(--sage)" stroke-width="1.5" fill="none" opacity="0.6"/>
-        <path d="M30 10C70 20 105 40 130 65C155 90 170 120 180 160" stroke="var(--sage)" stroke-width="1" fill="none" opacity="0.4"/>
-        <ellipse cx="150" cy="50" rx="20" ry="10" transform="rotate(35 150 50)" fill="var(--sage)" opacity="0.15"/>
-        <ellipse cx="165" cy="70" rx="16" ry="8" transform="rotate(25 165 70)" fill="var(--sage)" opacity="0.12"/>
-        <ellipse cx="120" cy="35" rx="14" ry="7" transform="rotate(50 120 35)" fill="var(--sage)" opacity="0.1"/>
-        <circle cx="190" cy="180" r="5" fill="var(--dusty-pink)" opacity="0.5"/>
-        <circle cx="180" cy="160" r="4" fill="var(--dusty-pink)" opacity="0.4"/>
-        <circle cx="170" cy="140" r="3.5" fill="var(--dusty-pink)" opacity="0.35"/>
-        <circle cx="130" cy="60" r="3" fill="var(--gold)" opacity="0.4"/>
-        <circle cx="110" cy="30" r="2.5" fill="var(--gold)" opacity="0.3"/>
-      </svg>
-
-      <svg class="floral-corner bottom-left" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M190 190C140 190 100 170 70 140C40 110 20 70 10 20" stroke="var(--sage)" stroke-width="1.5" fill="none" opacity="0.6"/>
-        <path d="M170 190C130 180 95 160 70 135C45 110 30 80 20 40" stroke="var(--sage)" stroke-width="1" fill="none" opacity="0.4"/>
-        <ellipse cx="50" cy="150" rx="20" ry="10" transform="rotate(35 50 150)" fill="var(--sage)" opacity="0.15"/>
-        <ellipse cx="35" cy="130" rx="16" ry="8" transform="rotate(25 35 130)" fill="var(--sage)" opacity="0.12"/>
-        <circle cx="10" cy="20" r="5" fill="var(--dusty-pink)" opacity="0.5"/>
-        <circle cx="20" cy="40" r="4" fill="var(--dusty-pink)" opacity="0.4"/>
-        <circle cx="70" cy="140" r="3" fill="var(--gold)" opacity="0.4"/>
-      </svg>
-
-      <svg class="floral-corner bottom-right" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 190C60 190 100 170 130 140C160 110 180 70 190 20" stroke="var(--sage)" stroke-width="1.5" fill="none" opacity="0.6"/>
-        <path d="M30 190C70 180 105 160 130 135C155 110 170 80 180 40" stroke="var(--sage)" stroke-width="1" fill="none" opacity="0.4"/>
-        <ellipse cx="150" cy="150" rx="20" ry="10" transform="rotate(-35 150 150)" fill="var(--sage)" opacity="0.15"/>
-        <ellipse cx="165" cy="130" rx="16" ry="8" transform="rotate(-25 165 130)" fill="var(--sage)" opacity="0.12"/>
-        <circle cx="190" cy="20" r="5" fill="var(--dusty-pink)" opacity="0.5"/>
-        <circle cx="180" cy="40" r="4" fill="var(--dusty-pink)" opacity="0.4"/>
-        <circle cx="130" cy="140" r="3" fill="var(--gold)" opacity="0.4"/>
-      </svg>
-
-      <!-- Cover Content -->
-      <div class="cover-content">
-        <p class="cover-subtitle">Thiệp Mời Cưới</p>
-        <h1 class="cover-names">Nhài <span class="amp">&</span> Long</h1>
-        <p class="cover-date">19 . 07 . 2026</p>
-        <button id="openBtn" class="cover-btn" aria-label="Mở thiệp cưới">
-          <span>Mở Thiệp</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 5v14M5 12l7 7 7-7"/>
-          </svg>
-        </button>
-      </div>
+  <div class="container">
+    <p class="subtitle">Thiệp Mời Cưới</p>
+    <h1 class="names">Nhài <span class="amp">&</span> Long</h1>
+    <p class="date">19 . 07 . 2026</p>
+    <div class="divider"></div>
+    <p class="label">Chọn thiệp theo gia đình</p>
+    <div class="btn-group">
+      <a href="nha-gai/" class="btn btn-bride">Nhà Gái — Họ Đào</a>
+      <a href="nha-trai/" class="btn btn-groom">Nhà Trai — Họ Bùi</a>
     </div>
-  </section>
-
-  <!-- ==================== MAIN INVITATION ==================== -->
-  <main id="invitation">
-    <div class="scroll-container">
-
-      <!-- ===== SECTION 1: COUPLE + COUNTDOWN ===== -->
-      <section class="scroll-section section-couple" id="sectionCouple">
-        <div class="section-inner">
-          <div class="couple-photo" data-animate="fade-up">
-            <img src="assets/image/MainImage.jpg" alt="Nhài & Long">
-          </div>
-          <p class="label" data-animate="fade-up" data-delay="0.1">We are getting married</p>
-          <h2 class="couple-names" data-animate="fade-up" data-delay="0.2">
-            Nhài <span class="amp">&</span> Long
-          </h2>
-          <p class="wedding-date" data-animate="fade-up" data-delay="0.4">
-            14:00 &middot; Chủ nhật, 19 tháng 07, 2026
-          </p>
-          <p class="lunar-date" data-animate="fade-up" data-delay="0.5">
-            (06/06 Bính Ngọ)
-          </p>
-
-          <div class="countdown" data-animate="fade-up" data-delay="0.6">
-            <div class="countdown-item">
-              <span class="countdown-number" id="countDays">00</span>
-              <span class="countdown-label">Ngày</span>
-            </div>
-            <span class="countdown-sep">:</span>
-            <div class="countdown-item">
-              <span class="countdown-number" id="countHours">00</span>
-              <span class="countdown-label">Giờ</span>
-            </div>
-            <span class="countdown-sep">:</span>
-            <div class="countdown-item">
-              <span class="countdown-number" id="countMinutes">00</span>
-              <span class="countdown-label">Phút</span>
-            </div>
-            <span class="countdown-sep">:</span>
-            <div class="countdown-item">
-              <span class="countdown-number" id="countSeconds">00</span>
-              <span class="countdown-label">Giây</span>
-            </div>
-          </div>
-
-          <div class="scroll-hint" data-animate="fade-up" data-delay="0.8">
-            <span>Kéo xuống</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===== SECTION 2: INVITATION LETTER ===== -->
-      <section class="scroll-section section-letter" id="sectionLetter">
-        <div class="section-inner">
-          <p class="label" data-animate="fade-up">Thư Mời</p>
-          <h2 class="section-title" data-animate="fade-up" data-delay="0.1">Trân trọng báo tin hỷ</h2>
-          <div class="letter-card" data-animate="fade-up" data-delay="0.2">
-            <div class="letter-ornament top"></div>
-            <p class="letter-text">
-              Gia đình chúng tôi trân trọng báo tin: Con gái <strong>Đào Thị Nhài</strong> cùng chàng trai <strong>Bùi Văn Long</strong> đã định ngày lành tháng tốt, lễ thành hôn được tổ chức vào:
-            </p>
-            <div class="letter-highlight">
-              <p class="letter-time">14 giờ 00, Chủ nhật</p>
-              <p class="letter-date-main">Ngày 19 tháng 07 năm 2026</p>
-              <p class="letter-lunar">(Tức ngày 06 tháng 06 năm Bính Ngọ)</p>
-            </div>
-            <p class="letter-text">
-              Trân trọng kính mời Quý vị đến chung vui, chứng giám và chúc phúc cho đôi uyên ương trong ngày trọng đại này.
-            </p>
-            <p class="letter-sign">Gia đình nhà gái trân trọng!</p>
-            <div class="letter-ornament bottom"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===== SECTION 3: EVENT DETAILS ===== -->
-      <section class="scroll-section section-events" id="sectionEvents">
-        <div class="section-inner">
-          <p class="label" data-animate="fade-up">Hôn Lễ</p>
-          <h2 class="section-title" data-animate="fade-up" data-delay="0.1">Lịch trình ngày cưới</h2>
-          <div class="events-grid">
-            <div class="event-card" data-animate="fade-up" data-delay="0.1">
-              <div class="event-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-              </div>
-              <h3>Bữa Cơm Thân Mật</h3>
-              <p class="event-time">10:00</p>
-              <p class="event-location">Tại gia đình nhà gái</p>
-              <p class="event-address">Thôn Rạng Đông, Nam Ninh, Ninh Bình</p>
-            </div>
-            <div class="event-card" data-animate="fade-up" data-delay="0.2">
-              <div class="event-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              </div>
-              <h3>Lễ Vu Quy</h3>
-              <p class="event-time">14:00</p>
-              <p class="event-location">Tại gia đình nhà gái</p>
-              <p class="event-address">Thôn Rạng Đông, Nam Ninh, Ninh Bình</p>
-            </div>
-            <div class="event-card" data-animate="fade-up" data-delay="0.3">
-              <div class="event-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              </div>
-              <h3>Lễ Thành Hôn</h3>
-              <p class="event-time">14:00</p>
-              <p class="event-location">Tại gia đình nhà trai</p>
-              <p class="event-address">Thôn Đắc Thắng Thượng, Đồng Thịnh, Ninh Bình</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===== SECTION 4: FAMILIES ===== -->
-      <section class="scroll-section section-families" id="sectionFamilies">
-        <div class="section-inner">
-          <p class="label" data-animate="fade-up">Gia Đình</p>
-          <h2 class="section-title" data-animate="fade-up" data-delay="0.1">Hai họ kết duyên</h2>
-          <div class="families-grid">
-            <div class="family-card" data-animate="fade-right" data-delay="0.2">
-              <div class="family-badge">Nhà Gái</div>
-              <h3 class="family-name">Họ Đào</h3>
-              <p class="family-member">Cô dâu: <strong>Đào Thị Nhài</strong></p>
-              <div class="family-divider"></div>
-              <p class="family-address">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Thôn Rạng Đông, Nam Ninh, Ninh Bình
-              </p>
-            </div>
-            <div class="family-card" data-animate="fade-left" data-delay="0.4">
-              <div class="family-badge">Nhà Trai</div>
-              <h3 class="family-name">Họ Bùi</h3>
-              <p class="family-member">Chú rể: <strong>Bùi Văn Long</strong></p>
-              <div class="family-divider"></div>
-              <p class="family-address">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Thôn Đắc Thắng Thượng, Đồng Thịnh, Ninh Bình
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===== SECTION 5: GUEST WISHES ===== -->
-      <section class="scroll-section section-wishes" id="sectionWishes">
-        <div class="section-inner">
-          <p class="label" data-animate="fade-up">Lời Chúc</p>
-          <h2 class="section-title" data-animate="fade-up" data-delay="0.1">Gửi lời yêu thương</h2>
-
-          <div class="wish-form-wrapper" data-animate="fade-up" data-delay="0.2">
-            <form id="wishForm">
-              <input type="text" id="wishName" placeholder="Tên của bạn" maxlength="50" required>
-              <textarea id="wishMessage" placeholder="Lời chúc dành cho đôi uyên ương..." maxlength="500" rows="3" required></textarea>
-              <button type="submit" id="wishSubmitBtn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-                Gửi Lời Chúc
-              </button>
-            </form>
-            <p class="wish-status" id="wishStatus"></p>
-          </div>
-
-          <div class="wishes-list-wrapper" data-animate="fade-up" data-delay="0.3">
-            <div class="wishes-list" id="wishesList">
-              <div class="wishes-loading" id="wishesLoading">
-                <div class="spinner"></div>
-                <span>Đang tải lời chúc...</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===== SECTION 6: GALLERY ===== -->
-      <section class="scroll-section section-gallery" id="sectionGallery">
-        <div class="section-inner">
-          <p class="label" data-animate="fade-up">Album Ảnh</p>
-          <h2 class="section-title" data-animate="fade-up" data-delay="0.1">Kỷ niệm của chúng tôi</h2>
-          <div class="gallery-wrapper" data-animate="fade-up" data-delay="0.2">
-            <div class="swiper gallery-swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="assets/image/MainImage.jpg" alt="Nhài & Long" loading="lazy">
-                </div>
-                <div class="swiper-slide">
-                  <img src="assets/image/Image1.jpg" alt="Ảnh cưới 1" loading="lazy">
-                </div>
-                <div class="swiper-slide">
-                  <img src="assets/image/Image2.jpg" alt="Ảnh cưới 2" loading="lazy">
-                </div>
-                <div class="swiper-slide">
-                  <img src="assets/image/Image3.jpg" alt="Ảnh cưới 3" loading="lazy">
-                </div>
-                <div class="swiper-slide">
-                  <img src="assets/image/Image4.jpg" alt="Ảnh cưới 4" loading="lazy">
-                </div>
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-          <p class="gallery-hint" data-animate="fade-up" data-delay="0.4">Vuốt để xem thêm ảnh</p>
-        </div>
-      </section>
-
-      <!-- ===== SECTION 7: THANK YOU ===== -->
-      <section class="scroll-section section-thanks" id="sectionThanks">
-        <div class="section-inner">
-          <div class="ornament-line" data-animate="fade-up">
-            <span class="dot"></span>
-            <span class="line"></span>
-            <span class="dot"></span>
-          </div>
-          <h2 class="thanks-title" data-animate="fade-up" data-delay="0.1">Cảm Ơn</h2>
-          <p class="thanks-text" data-animate="fade-up" data-delay="0.2">
-            Sự hiện diện của Quý vị là niềm vinh hạnh lớn lao đối với gia đình chúng tôi. Xin chân thành cảm ơn!
-          </p>
-          <p class="thanks-names" data-animate="fade-up" data-delay="0.3">Nhài & Long</p>
-          <div class="ornament-line" data-animate="fade-up" data-delay="0.4">
-            <span class="dot"></span>
-            <span class="line"></span>
-            <span class="dot"></span>
-          </div>
-        </div>
-      </section>
-
-    </div>
-  </main>
-
-  <!-- ==================== NAVIGATION DOTS ==================== -->
-  <nav id="navDots" class="nav-dots hidden">
-    <button data-section="0" class="dot active" aria-label="Trang chính"></button>
-    <button data-section="1" class="dot" aria-label="Thư mời"></button>
-    <button data-section="2" class="dot" aria-label="Sự kiện"></button>
-    <button data-section="3" class="dot" aria-label="Gia đình"></button>
-    <button data-section="4" class="dot" aria-label="Lời chúc"></button>
-    <button data-section="5" class="dot" aria-label="Album"></button>
-    <button data-section="6" class="dot" aria-label="Cảm ơn"></button>
-  </nav>
-
-  <!-- ==================== SCRIPTS ==================== -->
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  <!-- Firebase (compat for CDN) -->
-  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
-
-  <!-- Main JS -->
-  <script src="js/main.js?v=2"></script>
+    <p class="hint">Vuốt xuống để xem thiệp sau khi chọn</p>
+  </div>
 </body>
 </html>
