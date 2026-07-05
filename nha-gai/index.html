@@ -120,24 +120,56 @@
   <main id="invitation">
     <div class="scroll-container">
 
-      <!-- ===== SECTION 1: COUPLE + COUNTDOWN ===== -->
+      <!-- ===== SECTION 1: COUPLE INTRO ===== -->
       <section class="scroll-section section-couple" id="sectionCouple">
         <div class="section-inner">
-          <div class="couple-photo" data-animate="fade-up">
-            <img src="../assets/image/MainImage.jpg" alt="Nhài & Long">
+          <p class="label" data-animate="fade-up">We are getting married</p>
+          <div class="couple-photo" data-animate="fade-up" data-delay="0.1">
+            <img src="../assets/image/MainImage.jpg" alt="Nhài &amp; Long">
           </div>
-          <p class="label" data-animate="fade-up" data-delay="0.1">We are getting married</p>
           <h2 class="couple-names" data-animate="fade-up" data-delay="0.2">
-            Nhài <span class="amp">&</span> Long
+            Nhài <span class="amp">&amp;</span> Long
           </h2>
-          <p class="wedding-date" data-animate="fade-up" data-delay="0.4">
-            14:00 &middot; Chủ nhật, 19 tháng 07, 2026
+          <div class="scroll-hint" data-animate="fade-up" data-delay="0.5">
+            <span>Kéo xuống</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SECTION 2: SAVE THE DATE (Calendar + Countdown) ===== -->
+      <section class="scroll-section section-savedate" id="sectionSaveDate">
+        <div class="section-inner">
+          <p class="label" data-animate="fade-up">Save The Date</p>
+          <h2 class="section-title" data-animate="fade-up" data-delay="0.1">Ngày trọng đại</h2>
+
+          <div class="calendar-heart" data-animate="fade-up" data-delay="0.2">
+            <div class="calendar-card">
+              <div class="calendar-header">
+                <span>Tháng 07</span>
+                <span>2026</span>
+              </div>
+              <div class="calendar-weekdays">
+                <span>T2</span><span>T3</span><span>T4</span><span>T5</span><span>T6</span><span>T7</span><span>CN</span>
+              </div>
+              <div class="calendar-days">
+                <span></span><span></span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+                <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+                <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span class="highlight">19</span>
+                <span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span>
+                <span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+
+          <p class="wedding-date" data-animate="fade-up" data-delay="0.3">
+            Chủ nhật, 19 tháng 07, 2026
           </p>
-          <p class="lunar-date" data-animate="fade-up" data-delay="0.5">
-            (06/06 Bính Ngọ)
+          <p class="lunar-date" data-animate="fade-up" data-delay="0.35">
+            (Nhằm ngày 06/06 Bính Ngọ)
           </p>
 
-          <div class="countdown" data-animate="fade-up" data-delay="0.6">
+          <div class="countdown" data-animate="fade-up" data-delay="0.4">
             <div class="countdown-item">
               <span class="countdown-number" id="countDays">00</span>
               <span class="countdown-label">Ngày</span>
@@ -158,15 +190,10 @@
               <span class="countdown-label">Giây</span>
             </div>
           </div>
-
-          <div class="scroll-hint" data-animate="fade-up" data-delay="0.8">
-            <span>Kéo xuống</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-          </div>
         </div>
       </section>
 
-      <!-- ===== SECTION 2: INVITATION LETTER ===== -->
+      <!-- ===== SECTION 3: INVITATION LETTER ===== -->
       <section class="scroll-section section-letter" id="sectionLetter">
         <div class="section-inner">
           <p class="label" data-animate="fade-up">Thư Mời</p>
@@ -190,11 +217,8 @@
         </div>
       </section>
 
-      <!-- ===== SECTION 3: EVENT DETAILS ===== -->
+      <!-- ===== SECTION 4: EVENT DETAILS ===== -->
       <section class="scroll-section section-events" id="sectionEvents">
-        <div class="deco-chibi chibi-center-bottom">
-          <img src="../assets/image/chibi/couple-kiss-removebg.png" alt="" aria-hidden="true">
-        </div>
         <div class="section-inner">
           <p class="label" data-animate="fade-up">Hôn Lễ</p>
           <h2 class="section-title" data-animate="fade-up" data-delay="0.1">Lịch trình ngày cưới</h2>
@@ -221,14 +245,8 @@
         </div>
       </section>
 
-      <!-- ===== SECTION 4: FAMILIES ===== -->
+      <!-- ===== SECTION 5: FAMILIES ===== -->
       <section class="scroll-section section-families" id="sectionFamilies">
-        <div class="deco-chibi chibi-top-right">
-          <img src="../assets/image/chibi/bride-removebg.png" alt="" aria-hidden="true">
-        </div>
-        <div class="deco-chibi chibi-bottom-left">
-          <img src="../assets/image/chibi/groom-removebg.png" alt="" aria-hidden="true">
-        </div>
         <div class="section-inner">
           <p class="label" data-animate="fade-up">Gia Đình</p>
           <h2 class="section-title" data-animate="fade-up" data-delay="0.1">Hai họ kết duyên</h2>
@@ -257,7 +275,7 @@
         </div>
       </section>
 
-      <!-- ===== SECTION 5: GUEST WISHES ===== -->
+      <!-- ===== SECTION 6: GUEST WISHES ===== -->
       <section class="scroll-section section-wishes" id="sectionWishes">
         <div class="section-inner">
           <p class="label" data-animate="fade-up">Lời Chúc</p>
@@ -286,7 +304,7 @@
         </div>
       </section>
 
-      <!-- ===== SECTION 6: GALLERY ===== -->
+      <!-- ===== SECTION 7: GALLERY ===== -->
       <section class="scroll-section section-gallery" id="sectionGallery">
         <div class="section-inner">
           <p class="label" data-animate="fade-up">Album Ảnh</p>
@@ -317,11 +335,8 @@
         </div>
       </section>
 
-      <!-- ===== SECTION 7: THANK YOU ===== -->
+      <!-- ===== SECTION 8: THANK YOU ===== -->
       <section class="scroll-section section-thanks" id="sectionThanks">
-        <div class="deco-chibi chibi-center-bottom">
-          <img src="../assets/image/chibi/couple-laugh-removebg.png" alt="" aria-hidden="true">
-        </div>
         <div class="section-inner">
           <div class="ornament-line" data-animate="fade-up">
             <span class="dot"></span>
@@ -347,12 +362,13 @@
   <!-- ==================== NAVIGATION DOTS ==================== -->
   <nav id="navDots" class="nav-dots hidden">
     <button data-section="0" class="dot active" aria-label="Trang chính"></button>
-    <button data-section="1" class="dot" aria-label="Thư mời"></button>
-    <button data-section="2" class="dot" aria-label="Sự kiện"></button>
-    <button data-section="3" class="dot" aria-label="Gia đình"></button>
-    <button data-section="4" class="dot" aria-label="Lời chúc"></button>
-    <button data-section="5" class="dot" aria-label="Album"></button>
-    <button data-section="6" class="dot" aria-label="Cảm ơn"></button>
+    <button data-section="1" class="dot" aria-label="Save the date"></button>
+    <button data-section="2" class="dot" aria-label="Thư mời"></button>
+    <button data-section="3" class="dot" aria-label="Sự kiện"></button>
+    <button data-section="4" class="dot" aria-label="Gia đình"></button>
+    <button data-section="5" class="dot" aria-label="Lời chúc"></button>
+    <button data-section="6" class="dot" aria-label="Album"></button>
+    <button data-section="7" class="dot" aria-label="Cảm ơn"></button>
   </nav>
 
   <!-- ==================== SCRIPTS ==================== -->
