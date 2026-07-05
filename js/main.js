@@ -7,7 +7,7 @@
   'use strict';
 
   // ── Firebase Config ──────────────────────────────
-  const firebaseConfig = {
+  var firebaseConfig = {
     apiKey: 'AIzaSyDWy1zleQMkMkF0812D_74ZrkmYk3CAsMs',
     authDomain: 'thiepcuoi-89ccd.firebaseapp.com',
     databaseURL: 'https://thiepcuoi-89ccd-default-rtdb.asia-southeast1.firebasedatabase.app',
@@ -18,25 +18,24 @@
   };
 
   firebase.initializeApp(firebaseConfig);
-  const db = firebase.database();
+  var db = firebase.database();
 
   // ── Wedding Date ─────────────────────────────────
-  // 19/07/2026 14:00 ICT (UTC+7) = 07:00 UTC
-  const WEDDING_DATE = new Date('2026-07-19T07:00:00Z');
+  var WEDDING_DATE = new Date('2026-07-19T07:00:00Z');
 
   // ── Countdown Timer ──────────────────────────────
-  const countDays = document.getElementById('countDays');
-  const countHours = document.getElementById('countHours');
-  const countMinutes = document.getElementById('countMinutes');
-  const countSeconds = document.getElementById('countSeconds');
+  var countDays = document.getElementById('countDays');
+  var countHours = document.getElementById('countHours');
+  var countMinutes = document.getElementById('countMinutes');
+  var countSeconds = document.getElementById('countSeconds');
 
   function pad(n) {
     return String(n).padStart(2, '0');
   }
 
   function updateCountdown() {
-    const now = Date.now();
-    const diff = WEDDING_DATE.getTime() - now;
+    var now = Date.now();
+    var diff = WEDDING_DATE.getTime() - now;
 
     if (diff <= 0) {
       countDays.textContent = '00';
@@ -46,11 +45,11 @@
       return;
     }
 
-    const totalSeconds = Math.floor(diff / 1000);
-    const days = Math.floor(totalSeconds / 86400);
-    const hours = Math.floor((totalSeconds % 86400) / 3600);
-    const minutes = Math.floor((totalSeconds % 3600) / 60);
-    const seconds = totalSeconds % 60;
+    var totalSeconds = Math.floor(diff / 1000);
+    var days = Math.floor(totalSeconds / 86400);
+    var hours = Math.floor((totalSeconds % 86400) / 3600);
+    var minutes = Math.floor((totalSeconds % 3600) / 60);
+    var seconds = totalSeconds % 60;
 
     countDays.textContent = pad(days);
     countHours.textContent = pad(hours);
@@ -58,33 +57,58 @@
     countSeconds.textContent = pad(seconds);
   }
 
-  // ── GSAP Scroll Animations ───────────────────────
-  gsap.registerPlugin(ScrollTrigger);
-
+  // ── Scroll Animations (Intersection Observer) ────
   function initScrollAnimations() {
-    document.querySelectorAll('[data-animate]').forEach(function (el) {
+    var animatedEls = document.querySelectorAll('[data-animate]');
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      animatedEls.forEach(function (el) {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      });
+      return;
+    }
+
+    // Set initial state via JS (not CSS) to avoid FOUC
+    animatedEls.forEach(function (el) {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(40px)';
+      el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+
       var animType = el.getAttribute('data-animate');
-      var delay = parseFloat(el.getAttribute('data-delay')) || 0;
-
-      var fromVars = { opacity: 0, duration: 0.8, delay: delay, ease: 'power2.out' };
-
-      if (animType === 'fade-up') {
-        fromVars.y = 40;
-      } else if (animType === 'fade-right') {
-        fromVars.x = -40;
+      if (animType === 'fade-right') {
+        el.style.transform = 'translateX(-40px)';
       } else if (animType === 'fade-left') {
-        fromVars.x = 40;
+        el.style.transform = 'translateX(40px)';
       }
 
-      gsap.from(el, {
-        ...fromVars,
-        scrollTrigger: {
-          trigger: el,
-          scroller: '.scroll-container',
-          start: 'top 85%',
-          toggleActions: 'play none none none',
-        },
-      });
+      var delay = parseFloat(el.getAttribute('data-delay')) || 0;
+      if (delay > 0) {
+        el.style.transitionDelay = delay + 's';
+      }
+    });
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var el = entry.target;
+            el.style.opacity = '1';
+            el.style.transform = 'translate(0, 0)';
+            observer.unobserve(el);
+          }
+        });
+      },
+      {
+        root: document.querySelector('.scroll-container'),
+        rootMargin: '0px 0px -10% 0px',
+        threshold: 0.1,
+      }
+    );
+
+    animatedEls.forEach(function (el) {
+      observer.observe(el);
     });
   }
 
@@ -94,7 +118,6 @@
   var dotButtons = navDots.querySelectorAll('.dot');
 
   function initNavDots() {
-    // Click handler
     dotButtons.forEach(function (btn) {
       btn.addEventListener('click', function () {
         var idx = parseInt(btn.getAttribute('data-section'));
@@ -102,7 +125,6 @@
       });
     });
 
-    // Scroll spy
     var scrollContainer = document.querySelector('.scroll-container');
     scrollContainer.addEventListener('scroll', function () {
       var scrollTop = scrollContainer.scrollTop;
@@ -172,19 +194,16 @@
   function initWishes() {
     var wishesRef = db.ref('wishes');
 
-    // Load existing wishes (ordered by timestamp)
     wishesRef.orderByChild('timestamp').on('child_added', function (snapshot) {
       var wish = snapshot.val();
       if (!wish) return;
 
-      // Remove loading indicator on first load
       if (!wishesLoaded) {
         wishesLoaded = true;
         wishesLoading.style.display = 'none';
       }
 
       var card = createWishCard(wish);
-      // Insert at top (newest first)
       if (wishesList.firstChild && wishesList.firstChild !== wishesLoading) {
         wishesList.insertBefore(card, wishesList.firstChild);
       } else {
@@ -192,11 +211,9 @@
       }
     });
 
-    // Handle form submit
     wishForm.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      // Cooldown: 10 seconds
       var now = Date.now();
       if (now - lastSubmitTime < 10000) {
         showStatus('Vui lòng đợi 10 giây trước khi gửi lại!', true);
@@ -214,11 +231,12 @@
       wishSubmitBtn.disabled = true;
       wishSubmitBtn.innerHTML = '<span class="spinner" style="width:16px;height:16px;border-width:2px;"></span> Đang gửi...';
 
-      wishesRef.push({
-        name: name,
-        message: message,
-        timestamp: firebase.database.ServerValue.TIMESTAMP,
-      })
+      wishesRef
+        .push({
+          name: name,
+          message: message,
+          timestamp: firebase.database.ServerValue.TIMESTAMP,
+        })
         .then(function () {
           lastSubmitTime = Date.now();
           wishName.value = '';
@@ -275,7 +293,6 @@
         invitation.classList.add('visible');
         navDots.classList.remove('hidden');
 
-        // Init all modules after DOM is visible
         updateCountdown();
         setInterval(updateCountdown, 1000);
         initScrollAnimations();

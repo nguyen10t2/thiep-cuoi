@@ -879,28 +879,7 @@ button {
   transform: scale(1.3);
 }
 
-/* ── GSAP Animation States ──────────────────────── */
-[data-animate] {
-  opacity: 0;
-  transform: translateY(40px);
-}
-
-[data-animate="fade-right"] {
-  transform: translateX(-40px);
-}
-
-[data-animate="fade-left"] {
-  transform: translateX(40px);
-}
-
-[data-animate="fade-up"] {
-  transform: translateY(40px);
-}
-
-[data-animate].animated {
-  opacity: 1;
-  transform: translate(0, 0);
-}
+/* ── Animations handled by JS ───────────────────── */
 
 /* ── Responsive ─────────────────────────────────── */
 @media (min-width: 640px) {
@@ -959,10 +938,5 @@ button {
 
   .cover-content {
     animation: none;
-  }
-
-  [data-animate] {
-    opacity: 1;
-    transform: none;
   }
 }
