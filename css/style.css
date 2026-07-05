@@ -276,26 +276,7 @@ button {
   z-index: 2;
 }
 
-/* Section Background Images */
-.section-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.section-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.08;
-}
-
-.section-bg-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
+/* Section Background Images - removed, using deco-photo instead */
 
 /* Decorative SVG Elements */
 .section-deco {
@@ -303,6 +284,49 @@ button {
   z-index: 1;
   opacity: 0.12;
   pointer-events: none;
+}
+
+/* Decorative Photos - framed, behind text */
+.deco-photo {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  border: 4px solid var(--white);
+}
+
+.deco-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.18;
+}
+
+.deco-photo-events {
+  width: clamp(120px, 35vw, 200px);
+  height: clamp(160px, 45vw, 260px);
+  top: 10%;
+  right: -20px;
+  transform: rotate(5deg);
+}
+
+.deco-photo-families {
+  width: clamp(100px, 30vw, 180px);
+  height: clamp(140px, 40vw, 240px);
+  bottom: 8%;
+  left: -15px;
+  transform: rotate(-4deg);
+}
+
+.deco-photo-thanks {
+  width: clamp(140px, 38vw, 220px);
+  height: clamp(140px, 38vw, 220px);
+  top: 15%;
+  right: -25px;
+  border-radius: 50%;
+  transform: rotate(3deg);
 }
 
 .deco-top-right {
@@ -1096,6 +1120,18 @@ button {
 @media (min-width: 640px) {
   .scroll-section {
     padding: 4rem 2rem;
+  }
+
+  .deco-photo-events {
+    right: 10px;
+  }
+
+  .deco-photo-families {
+    left: 10px;
+  }
+
+  .deco-photo-thanks {
+    right: 15px;
   }
 
   .events-grid {
