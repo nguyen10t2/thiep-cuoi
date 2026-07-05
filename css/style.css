@@ -360,7 +360,7 @@ a {
    ───────────────────────────────────────────────── */
 .cover-bottom-text {
     text-align: center;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 
 .cover-bottom-text h2 {
@@ -720,7 +720,7 @@ a {
     font-size: clamp(1.4rem, 4vw, 1.8rem);
     font-weight: 400;
     color: var(--text-medium);
-    margin-bottom: 0.15rem;
+    margin-bottom: 0;
 }
 
 .lunar-date {
@@ -744,7 +744,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: clamp(50px, 14vw, 70px);
+    min-width: clamp(45px, 12vw, 60px);
 }
 
 .countdown-number {
@@ -757,7 +757,7 @@ a {
     border: 1px solid var(--light-pink);
     border-radius: 12px;
     padding: 0.4rem 0.6rem;
-    min-width: clamp(50px, 14vw, 70px);
+    min-width: clamp(45px, 12vw, 60px);
     box-shadow: 0 4px 15px var(--shadow);
 }
 
@@ -776,7 +776,7 @@ a {
     font-size: clamp(1.3rem, 4vw, 2rem);
     color: var(--gold);
     opacity: 0.5;
-    margin-top: -0.8rem;
+    margin-top: -0.5rem;
 }
 
 /* Scroll hint */
@@ -809,13 +809,13 @@ a {
 .calendar-heart {
     width: 100%;
     max-width: 320px;
-    margin: 0 auto 1.5rem;
+    margin: 0 auto 0.5rem;
 }
 
 .calendar-card {
     background: var(--white);
     border-radius: 16px;
-    padding: 1.2rem 1rem;
+    padding: 0.8rem 0.5rem;
     box-shadow: 0 8px 30px var(--shadow);
     border: 1px solid rgba(0, 0, 0, 0.12);
 }
@@ -824,8 +824,8 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 0.8rem;
-    margin-bottom: 0.6rem;
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.4rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     font-family: var(--font-serif);
     font-size: clamp(1.1rem, 3vw, 1.3rem);
@@ -847,7 +847,7 @@ a {
     font-weight: 400;
     color: var(--text-light);
     letter-spacing: 0.05em;
-    padding: 0.3rem 0;
+    padding: 0.1rem 0;
 }
 
 .calendar-days {
@@ -861,7 +861,7 @@ a {
     font-family: var(--font-serif);
     font-size: clamp(1.05rem, 2.5vw, 1.2rem);
     color: var(--text-medium);
-    padding: 0.35rem 0;
+    padding: 0.15rem 0;
     border-radius: 50%;
     line-height: 1;
     display: flex;
@@ -946,7 +946,7 @@ a {
     font-size: clamp(1.1rem, 3vw, 1.3rem);
     color: var(--text-medium);
     line-height: 1.8;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .letter-text strong {
@@ -957,7 +957,7 @@ a {
 /* Highlighted date box */
 .letter-highlight {
     text-align: center;
-    padding: 1.2rem 1rem;
+    padding: 0.8rem 0.5rem;
     margin: 1.2rem 0;
     background: linear-gradient(135deg, var(--blush) 0%, var(--soft-pink) 100%);
     border-radius: 12px;
@@ -1002,7 +1002,7 @@ a {
     font-size: clamp(1.3rem, 3.5vw, 1.6rem);
     font-weight: 600;
     color: var(--text-dark);
-    margin-bottom: 0.15rem;
+    margin-bottom: 0;
 }
 
 .letter-lunar {
@@ -1091,7 +1091,7 @@ a {
     font-size: clamp(1.05rem, 2.5vw, 1.2rem);
     font-weight: 500;
     color: var(--text-dark);
-    margin-bottom: 0.15rem;
+    margin-bottom: 0;
 }
 
 .event-address {
@@ -1461,7 +1461,7 @@ a {
     color: var(--text-medium);
     line-height: 1.8;
     max-width: 440px;
-    margin: 0 auto 1.5rem;
+    margin: 0 auto 0.5rem;
 }
 
 .thanks-names {
