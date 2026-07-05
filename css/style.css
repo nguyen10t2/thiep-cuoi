@@ -73,7 +73,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.9s ease;
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease;
   overflow: hidden;
 }
 
@@ -85,73 +85,8 @@ button {
   z-index: 1;
 }
 
-/* Chibi Anime Wedding Characters */
-.chibi-frame {
-  position: absolute;
-  z-index: 5;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 6px 24px rgba(212, 137, 154, 0.25);
-  border: 3px solid rgba(255, 255, 255, 0.8);
-  animation: chibiFloat 6s ease-in-out infinite;
-}
-
-.chibi-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Alternating layout: TR, BL, TL, BR */
-.chibi-pos-tr {
-  top: 6%;
-  right: 4%;
-  width: clamp(90px, 22vw, 160px);
-  height: clamp(90px, 22vw, 160px);
-  transform: rotate(3deg);
-  animation-delay: 0s;
-}
-
-.chibi-pos-bl {
-  bottom: 8%;
-  left: 4%;
-  width: clamp(100px, 24vw, 170px);
-  height: clamp(100px, 24vw, 170px);
-  transform: rotate(-2deg);
-  animation-delay: -2s;
-}
-
-.chibi-pos-tl {
-  top: 8%;
-  left: 4%;
-  width: clamp(80px, 20vw, 140px);
-  height: clamp(80px, 20vw, 140px);
-  transform: rotate(-4deg);
-  animation-delay: -1s;
-}
-
-.chibi-pos-br {
-  bottom: 10%;
-  right: 4%;
-  width: clamp(85px, 21vw, 150px);
-  height: clamp(85px, 21vw, 150px);
-  transform: rotate(2deg);
-  animation-delay: -3s;
-}
-
-@keyframes chibiFloat {
-  0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
-  50% { transform: translateY(-12px) rotate(var(--rot, 0deg)); }
-}
-
-.chibi-pos-tr { --rot: 3deg; }
-.chibi-pos-bl { --rot: -2deg; }
-.chibi-pos-tl { --rot: -4deg; }
-.chibi-pos-br { --rot: 2deg; }
-
 #cover.zoom-out {
-  transform: scale(1.3);
+  transform: scale(1.1);
   opacity: 0;
   pointer-events: none;
 }
@@ -167,82 +102,195 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-}
-
-/* Floral Corners */
-.floral-corner {
-  position: absolute;
-  width: clamp(100px, 25vw, 180px);
-  height: clamp(100px, 25vw, 180px);
   z-index: 2;
-  animation: floralSway 6s ease-in-out infinite;
 }
 
-.top-left { top: 0; left: 0; }
-.top-right { top: 0; right: 0; }
-.bottom-left { bottom: 0; left: 0; animation-delay: -3s; }
-.bottom-right { bottom: 0; right: 0; animation-delay: -3s; }
-
-@keyframes floralSway {
-  0%, 100% { transform: rotate(0deg) scale(1); }
-  50% { transform: rotate(2deg) scale(1.03); }
+/* Envelope Container */
+.envelope-wrapper {
+  position: relative;
+  width: clamp(280px, 85vw, 450px);
+  height: clamp(180px, 55vw, 280px);
+  perspective: 1200px;
+  animation: floatEnvelope 4s ease-in-out infinite;
 }
 
-/* Floating Leaves */
-.floating-leaf {
+@keyframes floatEnvelope {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.envelope {
   position: absolute;
+  inset: 0;
+  background: var(--ivory);
+  border-radius: 4px;
+  box-shadow: 0 15px 40px rgba(212, 137, 154, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+}
+
+/* Flap (Top) */
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65%;
+  background: var(--ivory);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  z-index: 4;
+  transform-origin: top;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 4px 4px 0 0;
+}
+.envelope-flap::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, rgba(212, 137, 154, 0.3), transparent);
+}
+
+#cover.zoom-out .envelope-flap {
+  transform: rotateX(180deg);
+  z-index: 1;
+}
+
+/* Front flaps (Left, Right, Bottom) */
+.envelope-front-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50.5%;
+  height: 100%;
+  background: var(--white);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  z-index: 3;
+  border-radius: 4px 0 0 4px;
+}
+
+.envelope-front-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50.5%;
+  height: 100%;
+  background: var(--white);
+  clip-path: polygon(100% 0, 0 50%, 100% 100%);
+  z-index: 3;
+  border-radius: 0 4px 4px 0;
+}
+
+.envelope-front-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 55%;
+  background: var(--cream);
+  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+  z-index: 3;
+  border-radius: 0 0 4px 4px;
+}
+
+/* Card inside */
+.envelope-body {
+  position: absolute;
+  width: 92%;
+  height: 90%;
+  background: var(--white);
+  border-radius: 4px;
   z-index: 2;
-  opacity: 0.25;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  transition: transform 0.8s 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(212, 137, 154, 0.15);
+}
+
+#cover.zoom-out .envelope-body {
+  transform: translateY(-40%);
+}
+
+/* Seal Button */
+.seal-btn {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  width: clamp(65px, 16vw, 85px);
+  height: clamp(65px, 16vw, 85px);
+  background: var(--dusty-pink);
+  color: var(--white);
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 6px 15px rgba(212, 137, 154, 0.35);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  outline: none;
+}
+
+.seal-btn svg {
+  margin-top: 2px;
+  width: 14px;
+  height: 14px;
+}
+
+.seal-btn:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: #c47a8c;
+  box-shadow: 0 8px 20px rgba(212, 137, 154, 0.4);
+}
+
+#cover.zoom-out .seal-btn {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5);
   pointer-events: none;
-  animation: leafFloat 8s ease-in-out infinite;
+  transition: all 0.3s;
 }
 
-.floating-leaf:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; animation-duration: 10s; }
-.floating-leaf:nth-child(2) { top: 70%; right: 8%; animation-delay: -3s; animation-duration: 9s; }
-.floating-leaf:nth-child(3) { bottom: 20%; left: 15%; animation-delay: -5s; animation-duration: 11s; }
-.floating-leaf:nth-child(4) { top: 30%; right: 12%; animation-delay: -2s; animation-duration: 8s; }
-
-@keyframes leafFloat {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  25% { transform: translateY(-15px) rotate(5deg); }
-  50% { transform: translateY(-5px) rotate(-3deg); }
-  75% { transform: translateY(-20px) rotate(4deg); }
-}
-
-/* Cover Content */
+/* Cover Content Styling */
 .cover-content {
   text-align: center;
-  z-index: 3;
-  animation: coverZoom 4s ease-in-out infinite alternate;
-}
-
-@keyframes coverZoom {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.04); }
+  width: 100%;
 }
 
 .cover-subtitle {
   font-family: var(--font-sans);
-  font-size: clamp(0.7rem, 2vw, 0.9rem);
+  font-size: clamp(0.6rem, 1.5vw, 0.75rem);
   font-weight: 300;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--dusty-pink);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .cover-names {
   font-family: var(--font-script);
-  font-size: clamp(3rem, 12vw, 6rem);
+  font-size: clamp(2.2rem, 6.5vw, 3.5rem);
   color: var(--text-dark);
   line-height: 1.1;
   margin-bottom: 0.5rem;
-  text-shadow: 0 2px 15px rgba(212, 137, 154, 0.3);
 }
 
 .cover-names .amp {
-  font-size: 0.6em;
+  font-size: 0.5em;
   color: var(--gold);
   display: inline-block;
   margin: 0 0.1em;
@@ -250,40 +298,10 @@ button {
 
 .cover-date {
   font-family: var(--font-sans);
-  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  font-size: clamp(0.7rem, 1.8vw, 0.9rem);
   font-weight: 300;
-  letter-spacing: 0.5em;
+  letter-spacing: 0.3em;
   color: var(--text-medium);
-  margin-bottom: 2.5rem;
-}
-
-.cover-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.9rem 2.2rem;
-  background: var(--dusty-pink);
-  color: var(--white);
-  border-radius: 50px;
-  font-family: var(--font-sans);
-  font-size: clamp(0.8rem, 2vw, 0.95rem);
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 20px var(--shadow);
-  animation: btnPulse 2s ease-in-out infinite;
-}
-
-.cover-btn:hover {
-  background: #c47a8c;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(212, 137, 154, 0.3);
-}
-
-@keyframes btnPulse {
-  0%, 100% { box-shadow: 0 4px 20px var(--shadow); }
-  50% { box-shadow: 0 4px 30px rgba(212, 137, 154, 0.35); }
 }
 
 /* ── MAIN INVITATION ────────────────────────────── */
@@ -331,47 +349,54 @@ button {
   pointer-events: none;
 }
 
-/* Decorative Photos - framed, behind text */
-.deco-photo {
+/* Decorative Chibi Characters */
+.deco-chibi {
   position: absolute;
   z-index: 1;
   pointer-events: none;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-  border: 4px solid var(--white);
+  opacity: 0.85; /* Slight transparency so it blends with background */
+  filter: drop-shadow(0 4px 12px rgba(212, 137, 154, 0.2));
+  animation: floatChibi 6s ease-in-out infinite;
 }
 
-.deco-photo img {
+.deco-chibi img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  opacity: 0.18;
+  object-fit: contain;
 }
 
-.deco-photo-events {
-  width: clamp(120px, 35vw, 200px);
-  height: clamp(160px, 45vw, 260px);
-  top: 10%;
-  right: -20px;
-  transform: rotate(5deg);
+@keyframes floatChibi {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
-.deco-photo-families {
-  width: clamp(100px, 30vw, 180px);
-  height: clamp(140px, 40vw, 240px);
-  bottom: 8%;
-  left: -15px;
-  transform: rotate(-4deg);
+@keyframes floatChibiCenter {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -10px); }
 }
 
-.deco-photo-thanks {
-  width: clamp(140px, 38vw, 220px);
-  height: clamp(140px, 38vw, 220px);
-  top: 15%;
-  right: -25px;
-  border-radius: 50%;
-  transform: rotate(3deg);
+/* Balanced Center */
+.chibi-center-bottom {
+  width: clamp(130px, 35vw, 180px);
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: floatChibiCenter 6s ease-in-out infinite;
+}
+
+/* Balanced Diagonal (Top-Right & Bottom-Left) */
+.chibi-top-right {
+  width: clamp(90px, 25vw, 130px);
+  top: 5%;
+  right: -2%;
+  animation-delay: -1s;
+}
+
+.chibi-bottom-left {
+  width: clamp(90px, 25vw, 130px);
+  bottom: 5%;
+  left: -2%;
+  animation-delay: -2s;
 }
 
 .deco-top-right {
