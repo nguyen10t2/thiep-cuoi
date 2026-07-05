@@ -1,0 +1,13 @@
+{
+  "database": {
+    "rules": {
+      "rules": {
+        "wishes": {
+          ".read": true,
+          ".write": "newData.hasChildren(['name', 'message', 'timestamp']) && newData.child('name').isString() && newData.child('name').val().length <= 50 && newData.child('message').isString() && newData.child('message').val().length <= 500",
+          ".indexOn": ["timestamp"]
+        }
+      }
+    }
+  }
+}
