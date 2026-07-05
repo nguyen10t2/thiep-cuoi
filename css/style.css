@@ -349,54 +349,89 @@ button {
   pointer-events: none;
 }
 
+/* Floral Corners (Restored) */
+.floral-corner {
+  position: absolute;
+  width: clamp(100px, 25vw, 180px);
+  height: clamp(100px, 25vw, 180px);
+  z-index: 2;
+  animation: floralSway 6s ease-in-out infinite;
+  pointer-events: none;
+}
+.top-left { top: 0; left: 0; }
+.top-right { top: 0; right: 0; }
+.bottom-left { bottom: 0; left: 0; animation-delay: -3s; }
+.bottom-right { bottom: 0; right: 0; animation-delay: -3s; }
+
+@keyframes floralSway {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(2deg) scale(1.03); }
+}
+
+/* Floating Leaves (Restored) */
+.floating-leaf {
+  position: absolute;
+  z-index: 2;
+  opacity: 0.25;
+  pointer-events: none;
+  animation: leafFloat 8s ease-in-out infinite;
+}
+.floating-leaf:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; animation-duration: 10s; }
+.floating-leaf:nth-child(2) { top: 70%; right: 8%; animation-delay: -3s; animation-duration: 9s; }
+.floating-leaf:nth-child(3) { bottom: 20%; left: 15%; animation-delay: -5s; animation-duration: 11s; }
+.floating-leaf:nth-child(4) { top: 30%; right: 12%; animation-delay: -2s; animation-duration: 8s; }
+
+@keyframes leafFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-15px) rotate(5deg); }
+  50% { transform: translateY(-5px) rotate(-3deg); }
+  75% { transform: translateY(-20px) rotate(4deg); }
+}
+
 /* Decorative Chibi Characters */
 .deco-chibi {
   position: absolute;
   z-index: 1;
   pointer-events: none;
-  opacity: 0.85; /* Slight transparency so it blends with background */
+  opacity: 0.95; 
   filter: drop-shadow(0 4px 12px rgba(212, 137, 154, 0.2));
-  animation: floatChibi 6s ease-in-out infinite;
 }
 
 .deco-chibi img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  vertical-align: bottom; /* Prevents tiny gaps below images */
 }
 
-@keyframes floatChibi {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes floatChibiCenter {
-  0%, 100% { transform: translate(-50%, 0); }
-  50% { transform: translate(-50%, -10px); }
-}
-
-/* Balanced Center */
+/* Balanced Center (Flush with bottom) */
 .chibi-center-bottom {
-  width: clamp(130px, 35vw, 180px);
-  bottom: 0%;
+  width: clamp(160px, 45vw, 220px);
+  bottom: -5px; /* Pull down slightly to hide bottom edge */
   left: 50%;
   transform: translateX(-50%);
-  animation: floatChibiCenter 6s ease-in-out infinite;
+  /* Remove float animation so it stays grounded */
 }
 
 /* Balanced Diagonal (Top-Right & Bottom-Left) */
 .chibi-top-right {
-  width: clamp(90px, 25vw, 130px);
+  width: clamp(100px, 28vw, 150px);
   top: 5%;
   right: -2%;
+  animation: floatChibiSmall 6s ease-in-out infinite;
   animation-delay: -1s;
 }
 
 .chibi-bottom-left {
-  width: clamp(90px, 25vw, 130px);
-  bottom: 5%;
+  width: clamp(100px, 28vw, 150px);
+  bottom: -5px; /* Flush with bottom */
   left: -2%;
-  animation-delay: -2s;
+  /* Grounded, no float */
+}
+
+@keyframes floatChibiSmall {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
 
 .deco-top-right {
