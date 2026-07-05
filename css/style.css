@@ -53,7 +53,7 @@ html {
 
 body {
     font-family: var(--font-serif);
-    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    font-size: clamp(1.15rem, 3vw, 1.35rem);
     line-height: 1.7;
     color: var(--text-dark);
     background: var(--ivory);
@@ -668,7 +668,7 @@ a {
 /* Dates */
 .wedding-date {
     font-family: var(--font-serif);
-    font-size: clamp(0.9rem, 2.5vw, 1.15rem);
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
     font-weight: 400;
     color: var(--text-medium);
     margin-bottom: 0.15rem;
@@ -676,7 +676,7 @@ a {
 
 .lunar-date {
     font-family: var(--font-sans);
-    font-size: clamp(0.7rem, 1.8vw, 0.85rem);
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     font-weight: 300;
     color: var(--text-light);
     margin-bottom: 1.5rem;
@@ -810,7 +810,7 @@ a {
 .calendar-days span {
     text-align: center;
     font-family: var(--font-serif);
-    font-size: clamp(0.85rem, 2.2vw, 1rem);
+    font-size: clamp(1.05rem, 2.5vw, 1.2rem);
     color: var(--text-medium);
     padding: 0.35rem 0;
     border-radius: 50%;
@@ -894,7 +894,7 @@ a {
 
 /* Letter body text */
 .letter-text {
-    font-size: clamp(0.9rem, 2.3vw, 1.05rem);
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
     color: var(--text-medium);
     line-height: 1.8;
     margin-bottom: 1rem;
@@ -940,7 +940,7 @@ a {
 
 .letter-time {
     font-family: var(--font-sans);
-    font-size: clamp(0.75rem, 1.8vw, 0.9rem);
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
     font-weight: 300;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -950,7 +950,7 @@ a {
 
 .letter-date-main {
     font-family: var(--font-serif);
-    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    font-size: clamp(1.3rem, 3.5vw, 1.6rem);
     font-weight: 600;
     color: var(--text-dark);
     margin-bottom: 0.15rem;
@@ -958,7 +958,7 @@ a {
 
 .letter-lunar {
     font-family: var(--font-sans);
-    font-size: clamp(0.7rem, 1.8vw, 0.85rem);
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
     font-weight: 300;
     color: var(--text-light);
 }
@@ -968,7 +968,7 @@ a {
     font-style: italic;
     color: var(--dusty-pink);
     font-weight: 500;
-    font-size: clamp(0.9rem, 2.3vw, 1rem);
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
 }
 
 
@@ -1023,7 +1023,7 @@ a {
 
 .event-card h3 {
     font-family: var(--font-serif);
-    font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
     font-weight: 600;
     color: var(--text-dark);
     margin-bottom: 0.4rem;
@@ -1031,7 +1031,7 @@ a {
 
 .event-time {
     font-family: var(--font-sans);
-    font-size: clamp(0.8rem, 2.2vw, 0.95rem);
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     font-weight: 400;
     color: var(--dusty-pink);
     letter-spacing: 0.1em;
@@ -1039,7 +1039,7 @@ a {
 }
 
 .event-location {
-    font-size: clamp(0.9rem, 2.3vw, 1.05rem);
+    font-size: clamp(1.05rem, 2.5vw, 1.2rem);
     font-weight: 500;
     color: var(--text-dark);
     margin-bottom: 0.15rem;
@@ -1108,7 +1108,7 @@ a {
 }
 
 .family-member {
-    font-size: clamp(0.9rem, 2.3vw, 1.05rem);
+    font-size: clamp(1.05rem, 2.5vw, 1.2rem);
     color: var(--text-medium);
     margin-bottom: 0.8rem;
 }
@@ -1404,7 +1404,7 @@ a {
 }
 
 .thanks-text {
-    font-size: clamp(0.95rem, 2.3vw, 1.1rem);
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
     color: var(--text-medium);
     line-height: 1.8;
     max-width: 440px;
