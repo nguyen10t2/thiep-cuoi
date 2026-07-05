@@ -756,57 +756,44 @@ button {
 
 /* ── Section: Events ────────────────────────────── */
 .section-events {
-  background: linear-gradient(180deg, var(--ivory) 0%, var(--soft-pink) 100%);
+  background: var(--ivory);
+  padding-bottom: clamp(180px, 25vh, 250px); /* Push content up away from chibi */
 }
 
 .events-grid {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .event-card {
   background: var(--white);
-  border-radius: 20px;
-  padding: 2rem 1.5rem;
-  box-shadow: 0 6px 30px rgba(212, 137, 154, 0.12);
-  border: 1px solid rgba(212, 137, 154, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
   position: relative;
   overflow: hidden;
-}
-
-.event-card::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(to right, var(--gold), var(--dusty-pink));
-  opacity: 0;
-  transition: opacity 0.3s;
+  border: 1px solid rgba(212, 137, 154, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .event-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 40px rgba(212, 137, 154, 0.2);
-}
-
-.event-card:hover::after {
-  opacity: 1;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(212, 137, 154, 0.15);
 }
 
 .event-icon {
-  width: 56px;
-  height: 56px;
-  margin: 0 auto 1rem;
-  background: linear-gradient(135deg, var(--blush), var(--soft-pink));
+  width: 50px;
+  height: 50px;
+  background: var(--soft-pink);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(212, 137, 154, 0.15);
+  margin: 0 auto 1.5rem;
+  color: var(--dusty-pink);
 }
 
 .event-icon svg {
