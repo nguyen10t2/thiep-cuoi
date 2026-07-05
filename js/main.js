@@ -277,7 +277,7 @@
 
     var wishesRef = db.ref('wishes');
 
-    wishesRef.orderByChild('timestamp').on(
+    wishesRef.orderByChild('timestamp').limitToLast(20).on(
       'child_added',
       function (snapshot) {
         var wish = snapshot.val();

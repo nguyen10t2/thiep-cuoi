@@ -70,11 +70,39 @@ button {
   position: fixed;
   inset: 0;
   z-index: 1000;
-  background: linear-gradient(145deg, var(--blush) 0%, var(--soft-pink) 40%, var(--light-pink) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.9s ease;
+  overflow: hidden;
+}
+
+#cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, rgba(252,228,236,0.88) 0%, rgba(248,232,235,0.85) 40%, rgba(245,221,225,0.80) 100%);
+  z-index: 1;
+}
+
+#cover .cover-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+#cover .cover-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(2px);
+  transform: scale(1.1);
+  animation: coverBgZoom 12s ease-in-out infinite alternate;
+}
+
+@keyframes coverBgZoom {
+  0% { transform: scale(1.1); }
+  100% { transform: scale(1.2); }
 }
 
 #cover.zoom-out {
@@ -102,7 +130,7 @@ button {
   position: absolute;
   width: clamp(100px, 25vw, 180px);
   height: clamp(100px, 25vw, 180px);
-  z-index: 1;
+  z-index: 2;
   animation: floralSway 6s ease-in-out infinite;
 }
 
@@ -116,10 +144,31 @@ button {
   50% { transform: rotate(2deg) scale(1.03); }
 }
 
+/* Floating Leaves */
+.floating-leaf {
+  position: absolute;
+  z-index: 2;
+  opacity: 0.25;
+  pointer-events: none;
+  animation: leafFloat 8s ease-in-out infinite;
+}
+
+.floating-leaf:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; animation-duration: 10s; }
+.floating-leaf:nth-child(2) { top: 70%; right: 8%; animation-delay: -3s; animation-duration: 9s; }
+.floating-leaf:nth-child(3) { bottom: 20%; left: 15%; animation-delay: -5s; animation-duration: 11s; }
+.floating-leaf:nth-child(4) { top: 30%; right: 12%; animation-delay: -2s; animation-duration: 8s; }
+
+@keyframes leafFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-15px) rotate(5deg); }
+  50% { transform: translateY(-5px) rotate(-3deg); }
+  75% { transform: translateY(-20px) rotate(4deg); }
+}
+
 /* Cover Content */
 .cover-content {
   text-align: center;
-  z-index: 2;
+  z-index: 3;
   animation: coverZoom 4s ease-in-out infinite alternate;
 }
 
@@ -144,7 +193,7 @@ button {
   color: var(--text-dark);
   line-height: 1.1;
   margin-bottom: 0.5rem;
-  text-shadow: 0 2px 10px rgba(212, 137, 154, 0.2);
+  text-shadow: 0 2px 15px rgba(212, 137, 154, 0.3);
 }
 
 .cover-names .amp {
@@ -216,12 +265,59 @@ button {
   justify-content: center;
   padding: 3rem 1.5rem;
   position: relative;
+  overflow: hidden;
 }
 
 .section-inner {
   max-width: 600px;
   width: 100%;
   text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Section Background Images */
+.section-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.section-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.08;
+}
+
+.section-bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* Decorative SVG Elements */
+.section-deco {
+  position: absolute;
+  z-index: 1;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.deco-top-right {
+  top: 2rem;
+  right: -1rem;
+  width: clamp(80px, 20vw, 150px);
+  height: auto;
+}
+
+.deco-bottom-left {
+  bottom: 2rem;
+  left: -1rem;
+  width: clamp(80px, 20vw, 150px);
+  height: auto;
+  transform: rotate(180deg);
 }
 
 /* ── Common Elements ────────────────────────────── */
@@ -265,6 +361,23 @@ button {
   background: linear-gradient(to right, transparent, var(--gold), transparent);
 }
 
+/* Decorative Divider between sections */
+.section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.section-divider svg {
+  width: 30px;
+  height: 30px;
+  opacity: 0.3;
+}
+
 /* ── Section: Couple + Countdown ────────────────── */
 .section-couple {
   background: linear-gradient(180deg, var(--ivory) 0%, var(--cream) 100%);
@@ -276,8 +389,23 @@ button {
   margin: 0 auto 1.5rem;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid var(--light-pink);
-  box-shadow: 0 4px 25px var(--shadow);
+  border: 4px solid var(--white);
+  box-shadow: 0 8px 35px rgba(212, 137, 154, 0.25), 0 0 0 8px rgba(212, 137, 154, 0.08);
+  position: relative;
+}
+
+.couple-photo::after {
+  content: '';
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 1px dashed var(--gold);
+  opacity: 0.3;
+  animation: ringRotate 20s linear infinite;
+}
+
+@keyframes ringRotate {
+  to { transform: rotate(360deg); }
 }
 
 .couple-photo img {
@@ -344,7 +472,7 @@ button {
   border-radius: 12px;
   padding: 0.5rem 0.8rem;
   min-width: clamp(55px, 15vw, 75px);
-  box-shadow: 0 2px 10px var(--shadow);
+  box-shadow: 0 4px 15px var(--shadow);
 }
 
 .countdown-label {
@@ -391,10 +519,21 @@ button {
   background: var(--white);
   border-radius: 20px;
   padding: 2.5rem 2rem;
-  box-shadow: 0 4px 30px var(--shadow);
+  box-shadow: 0 8px 40px rgba(212, 137, 154, 0.15);
   position: relative;
   text-align: left;
   border: 1px solid rgba(212, 137, 154, 0.1);
+  overflow: hidden;
+}
+
+.letter-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, var(--gold), var(--dusty-pink), var(--sage));
 }
 
 .letter-ornament {
@@ -427,6 +566,30 @@ button {
   margin: 1.5rem 0;
   background: linear-gradient(135deg, var(--blush) 0%, var(--soft-pink) 100%);
   border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.letter-highlight::before,
+.letter-highlight::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+.letter-highlight::before {
+  top: -20px;
+  left: -20px;
+  background: var(--gold);
+}
+
+.letter-highlight::after {
+  bottom: -20px;
+  right: -20px;
+  background: var(--sage);
 }
 
 .letter-time {
@@ -476,29 +639,49 @@ button {
   background: var(--white);
   border-radius: 20px;
   padding: 2rem 1.5rem;
-  box-shadow: 0 4px 25px var(--shadow);
+  box-shadow: 0 6px 30px rgba(212, 137, 154, 0.12);
   border: 1px solid rgba(212, 137, 154, 0.08);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.event-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--gold), var(--dusty-pink));
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 .event-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px rgba(212, 137, 154, 0.2);
+}
+
+.event-card:hover::after {
+  opacity: 1;
 }
 
 .event-icon {
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   margin: 0 auto 1rem;
-  background: var(--blush);
+  background: linear-gradient(135deg, var(--blush), var(--soft-pink));
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 15px rgba(212, 137, 154, 0.15);
 }
 
 .event-icon svg {
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   stroke: var(--dusty-pink);
 }
 
@@ -546,14 +729,27 @@ button {
   background: var(--white);
   border-radius: 20px;
   padding: 2rem 1.5rem;
-  box-shadow: 0 4px 25px var(--shadow);
+  box-shadow: 0 6px 30px rgba(212, 137, 154, 0.12);
   border: 1px solid rgba(212, 137, 154, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.family-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--gold), var(--dusty-pink));
+  border-radius: 4px 0 0 4px;
 }
 
 .family-badge {
   display: inline-block;
   padding: 0.3rem 1.2rem;
-  background: var(--blush);
+  background: linear-gradient(135deg, var(--blush), var(--soft-pink));
   color: var(--dusty-pink);
   font-family: var(--font-sans);
   font-size: 0.7rem;
@@ -621,7 +817,8 @@ button {
   background: var(--white);
   padding: 1.5rem;
   border-radius: 16px;
-  box-shadow: 0 4px 20px var(--shadow);
+  box-shadow: 0 6px 30px rgba(212, 137, 154, 0.12);
+  border: 1px solid rgba(212, 137, 154, 0.08);
 }
 
 #wishForm input,
@@ -633,13 +830,14 @@ button {
   font-size: 1rem;
   color: var(--text-dark);
   background: var(--ivory);
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s;
   -webkit-appearance: none;
 }
 
 #wishForm input:focus,
 #wishForm textarea:focus {
   border-color: var(--dusty-pink);
+  box-shadow: 0 0 0 3px rgba(212, 137, 154, 0.1);
 }
 
 #wishForm input::placeholder,
@@ -658,7 +856,7 @@ button {
   justify-content: center;
   gap: 0.5rem;
   padding: 0.8rem 2rem;
-  background: var(--dusty-pink);
+  background: linear-gradient(135deg, var(--dusty-pink), #c47a8c);
   color: var(--white);
   border-radius: 50px;
   font-family: var(--font-sans);
@@ -668,10 +866,13 @@ button {
   text-transform: uppercase;
   transition: all 0.3s;
   align-self: center;
+  box-shadow: 0 4px 15px rgba(212, 137, 154, 0.25);
 }
 
 #wishSubmitBtn:hover {
-  background: #c47a8c;
+  background: linear-gradient(135deg, #c47a8c, #b06b7b);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(212, 137, 154, 0.35);
 }
 
 #wishSubmitBtn:disabled {
@@ -739,10 +940,15 @@ button {
   border-radius: 14px;
   padding: 1.2rem 1.5rem;
   margin-bottom: 0.8rem;
-  box-shadow: 0 2px 12px var(--shadow);
+  box-shadow: 0 3px 15px rgba(212, 137, 154, 0.1);
   text-align: left;
   border-left: 3px solid var(--dusty-pink);
   animation: wishIn 0.4s ease-out;
+  transition: transform 0.2s;
+}
+
+.wish-card:hover {
+  transform: translateX(3px);
 }
 
 @keyframes wishIn {
@@ -793,7 +999,7 @@ button {
 .gallery-swiper {
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 8px 30px var(--shadow);
+  box-shadow: 0 10px 40px rgba(212, 137, 154, 0.2);
 }
 
 .gallery-swiper .swiper-slide img {
@@ -822,6 +1028,11 @@ button {
 /* ── Section: Thank You ─────────────────────────── */
 .section-thanks {
   background: linear-gradient(180deg, var(--ivory) 0%, var(--soft-pink) 60%, var(--light-pink) 100%);
+  position: relative;
+}
+
+.section-thanks .section-bg img {
+  opacity: 0.06;
 }
 
 .thanks-title {
