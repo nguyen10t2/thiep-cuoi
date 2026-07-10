@@ -1,0 +1,97 @@
+{
+  "id": "hieu-phuonganh/gai",
+  "couple": "hieu-phuonganh",
+  "side": "gai",
+  "meta": {
+    "title": "Thiệp Cưới — Phương Anh & Minh Hiếu",
+    "description": "Trân trọng kính mời Quý vị đến chung vui cùng gia đình trong lễ thành hôn của Phan Phương Anh & Phùng Minh Hiếu.",
+    "ogTitle": "Thiệp Cưới — Phương Anh & Minh Hiếu",
+    "ogDescription": "25/07/2026 — Trân trọng kính mời Quý vị đến chung vui cùng gia đình."
+  },
+  "cover": {
+    "names": "PHƯƠNG ANH <span class=\"amp\">&amp;</span> MINH HIẾU",
+    "date": "25 . 07 . 2026"
+  },
+  "coupleNames": {
+    "label": "Ngày chung đôi",
+    "names": "Phương Anh <span class=\"amp\">&amp;</span> Minh Hiếu",
+    "photo": "assets/hieu-phuonganh/image/MainImage.jpg",
+    "photoAlt": "Phương Anh & Minh Hiếu"
+  },
+  "saveTheDate": {
+    "label": "Lưu Lại Ngày Vui",
+    "title": "Trân trọng báo tin hỷ",
+    "text": "Gia đình chúng tôi trân trọng báo tin: Con gái <strong>Phan Phương Anh</strong> cùng chàng trai <strong>Phùng Minh Hiếu</strong> đã định ngày lành tháng tốt, lễ thành hôn được tổ chức vào:",
+    "calendarMonth": "Tháng 07",
+    "calendarYear": "2026",
+    "calendarHighlight": "25",
+    "date": "Thứ bảy, 25 tháng 07, 2026",
+    "lunarDate": "(Nhằm ngày 12/06 Bính Ngọ)",
+    "familyNote": "Gia đình nhà gái trân trọng!"
+  },
+  "events": {
+    "label": "Hôn Lễ",
+    "title": "Lịch trình ngày cưới",
+    "items": [
+      {
+        "title": "Bữa Trưa Thân Mật — 24/07",
+        "time": "17:00",
+        "location": "Tại gia đình nhà gái",
+        "address": "Km 4, đường 10, Ý Yên, Ninh Bình"
+      },
+      {
+        "title": "Lễ Thành Hôn — 25/07",
+        "time": "10:00",
+        "location": "Nhà hàng Trống Đồng Palace",
+        "address": "Trần Phú, Nam Định, Ninh Bình"
+      }
+    ]
+  },
+  "families": {
+    "label": "Gia Đình",
+    "title": "Hai họ kết duyên",
+    "items": [
+      {
+        "badge": "Nhà Gái",
+        "name": "Họ Phan",
+        "member": "Bố: <strong>Phan Thanh Vân</strong><br>Mẹ: <strong>Phạm Thuý Hoa</strong>",
+        "address": "Km 4, đường 10, Ý Yên, Ninh Bình"
+      },
+      {
+        "badge": "Nhà Trai",
+        "name": "Họ Phùng",
+        "member": "Bố: <strong>Phùng Văn Chiến</strong><br>Mẹ: <strong>Nguyễn Thị Hoè</strong>",
+        "address": "Nhà hàng Trống Đồng Palace, Trần Phú, Nam Định, Ninh Bình"
+      }
+    ]
+  },
+  "gallery": {
+    "label": "Album Ảnh",
+    "title": "Kỷ niệm của chúng tôi",
+    "hint": "Vuốt để xem thêm ảnh",
+    "images": [
+      {"src": "assets/hieu-phuonganh/image/MainImage.jpg", "alt": "Phương Anh & Minh Hiếu"},
+      {"src": "assets/hieu-phuonganh/image/Image1.jpg", "alt": "Ảnh cưới 1"},
+      {"src": "assets/hieu-phuonganh/image/Image2.jpg", "alt": "Ảnh cưới 2"},
+      {"src": "assets/hieu-phuonganh/image/Image3.jpg", "alt": "Ảnh cưới 3"},
+      {"src": "assets/hieu-phuonganh/image/Image4.jpg", "alt": "Ảnh cưới 4"}
+    ]
+  },
+  "wishes": {
+    "label": "Lời Chúc",
+    "title": "Gửi lời yêu thương",
+    "namePlaceholder": "Tên của bạn",
+    "messagePlaceholder": "Lời chúc dành cho đôi uyên ương...",
+    "submitText": "Gửi Lời Chúc"
+  },
+  "thanks": {
+    "title": "Cảm Ơn",
+    "text": "Sự hiện diện của Quý vị là niềm vinh hạnh lớn lao đối với gia đình chúng tôi. Xin chân thành cảm ơn!",
+    "names": "Phương Anh & Minh Hiếu"
+  },
+  "audio": "assets/hieu-phuonganh/audio/bgm.mp3",
+  "weddingDate": "2026-07-25T03:00:00Z",
+  "firebase": {
+    "wishesPath": "wishes/hieu-phuonganh"
+  }
+}

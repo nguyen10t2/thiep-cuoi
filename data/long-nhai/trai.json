@@ -1,0 +1,97 @@
+{
+  "id": "long-nhai/trai",
+  "couple": "long-nhai",
+  "side": "trai",
+  "meta": {
+    "title": "Thiệp Cưới — Nhài & Long (Nhà Trai)",
+    "description": "Trân trọng kính mời Quý vị đến chung vui cùng gia đình trong lễ thành hôn của Bùi Văn Long & Đào Thị Nhài.",
+    "ogTitle": "Thiệp Cưới — Nhài & Long (Nhà Trai)",
+    "ogDescription": "19/07/2026 — Trân trọng kính mời Quý vị đến chung vui cùng gia đình."
+  },
+  "cover": {
+    "names": "LONG <span class=\"amp\">&amp;</span> NHÀI",
+    "date": "19 . 07 . 2026"
+  },
+  "coupleNames": {
+    "label": "Ngày chung đôi",
+    "names": "Long <span class=\"amp\">&amp;</span> Nhài",
+    "photo": "assets/long-nhai/image/MainImage.jpg",
+    "photoAlt": "Long & Nhài"
+  },
+  "saveTheDate": {
+    "label": "Lưu Lại Ngày Vui",
+    "title": "Trân trọng báo tin hỷ",
+    "text": "Gia đình chúng tôi trân trọng báo tin: Con trai <strong>Bùi Văn Long</strong> cùng cô gái <strong>Đào Thị Nhài</strong> đã định ngày lành tháng tốt, lễ thành hôn được tổ chức vào:",
+    "calendarMonth": "Tháng 07",
+    "calendarYear": "2026",
+    "calendarHighlight": "19",
+    "date": "Chủ nhật, 19 tháng 07, 2026",
+    "lunarDate": "(Nhằm ngày 06/06 Bính Ngọ)",
+    "familyNote": "Gia đình nhà trai trân trọng!"
+  },
+  "events": {
+    "label": "Hôn Lễ",
+    "title": "Lịch trình ngày cưới",
+    "items": [
+      {
+        "title": "Bữa Cơm Thân Mật — 19/07",
+        "time": "08:00",
+        "location": "Tại gia đình nhà trai",
+        "address": "Thôn Đắc Thắng Thượng, Đồng Thịnh, Ninh Bình"
+      },
+      {
+        "title": "Lễ Thành Hôn — 19/07",
+        "time": "14:30",
+        "location": "Tại gia đình nhà trai",
+        "address": "Thôn Đắc Thắng Thượng, Đồng Thịnh, Ninh Bình"
+      }
+    ]
+  },
+  "families": {
+    "label": "Gia Đình",
+    "title": "Hai họ kết duyên",
+    "items": [
+      {
+        "badge": "Nhà Trai",
+        "name": "Họ Bùi",
+        "member": "Chú rể: <strong>Bùi Văn Long</strong>",
+        "address": "Thôn Đắc Thắng Thượng, Đồng Thịnh, Ninh Bình"
+      },
+      {
+        "badge": "Nhà Gái",
+        "name": "Họ Đào",
+        "member": "Cô dâu: <strong>Đào Thị Nhài</strong>",
+        "address": "Thôn Rạng Đông, Nam Ninh, Ninh Bình"
+      }
+    ]
+  },
+  "gallery": {
+    "label": "Album Ảnh",
+    "title": "Kỷ niệm của chúng tôi",
+    "hint": "Vuốt để xem thêm ảnh",
+    "images": [
+      {"src": "assets/long-nhai/image/MainImage.jpg", "alt": "Long & Nhài"},
+      {"src": "assets/long-nhai/image/Image1.jpg", "alt": "Ảnh cưới 1"},
+      {"src": "assets/long-nhai/image/Image2.jpg", "alt": "Ảnh cưới 2"},
+      {"src": "assets/long-nhai/image/Image3.jpg", "alt": "Ảnh cưới 3"},
+      {"src": "assets/long-nhai/image/Image4.jpg", "alt": "Ảnh cưới 4"}
+    ]
+  },
+  "wishes": {
+    "label": "Lời Chúc",
+    "title": "Gửi lời yêu thương",
+    "namePlaceholder": "Tên của bạn",
+    "messagePlaceholder": "Lời chúc dành cho đôi uyên ương...",
+    "submitText": "Gửi Lời Chúc"
+  },
+  "thanks": {
+    "title": "Cảm Ơn",
+    "text": "Sự hiện diện của Quý vị là niềm vinh hạnh lớn lao đối với gia đình chúng tôi. Xin chân thành cảm ơn!",
+    "names": "Long & Nhài"
+  },
+  "audio": "assets/long-nhai/audio/bgm.mp3",
+  "weddingDate": "2026-07-19T07:00:00Z",
+  "firebase": {
+    "wishesPath": "wishes/long-nhai"
+  }
+}
